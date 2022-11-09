@@ -1,6 +1,6 @@
 {
-  "realm": "keycloak-tutorial",
-  "auth-server-url": "http://localhost:8080/auth/",
+  "realm": "lifewatcheric",
+  "auth-server-url": "https://sign.lifewatch.dev:8443/",
   "ssl-required": "external",
   "resource": "my-react-client",
   "public-client": true,
