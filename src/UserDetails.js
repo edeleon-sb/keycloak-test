@@ -9,12 +9,15 @@ export default function UserDetails() {
   return (
 
     <div>
-      {keycloak && (keycloak.hasResourceRole("manager") || keycloak.hasResourceRole("user")) && (<div>
+      {keycloak && keycloak.authenticated && (<div>
         <div>loggin succeed</div>
         <div> <UserInfo keycloak={keycloak} /></div>
         <div><Logout keycloak={keycloak} /></div>
       </div>
       )}
+	  {keycloak && (keycloak.hasResourceRole("manager") || keycloak.hasResourceRole("user")) &&
+		(<div>User is manager</div>)
+	  }
       {keycloak && !keycloak.authenticated &&
         (<div><a onClick={() => keycloak.login()}>Login</a></div>)
       }
